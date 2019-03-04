@@ -1,7 +1,7 @@
 ---
 - name: Install http service
   hosts: localhost
-  become: true
+ # become: true
 #remote_user: ansible
 
   tasks:
