@@ -1,0 +1,7 @@
+---
+name: apache installation
+become: true
+#remote_user: ansible
+gather_facts: false
+roles:
+  - apache_installation
