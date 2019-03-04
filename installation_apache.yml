@@ -1,0 +1,40 @@
+---
+name: Install http service
+become: true
+remote_user: ansible
+
+tasks:
+  - name: create a group
+    group:
+      name: apache
+      state: present
+  - name: create a user
+      name: apache
+      state: present
+      group: apache
+      
+  - name: Install httpd sevice
+    yum:
+      name: httpd
+      status: latest
+      
+  - name: copy: httpd.conf configuration file
+    get_url:
+      url: http://myblogmchopker.blogspot.com/2017/08/ansible-tomcat-installation-deployment.html
+      dest: /etc/httpd/conf/httpd.conf
+      force: yes
+      owner: apache
+      group: apache
+  - name: chnage index.html
+    lineinfile:
+      path: /var/www/html/index.html
+      line: "hello from {{ ansible_hostname}}"
+      create: yes
+  - name: start httpd service
+    service:
+      name: httpd
+      state: started
+      enabled: true
+      
+      
+     
