@@ -50,6 +50,10 @@
       service:
         name: ntp 
         enabled: yes 
+    - name: install frewalld
+      yum:
+        name: firewalld
+        state: present
     - name: firewall changes
       firewalld 
         state: disabled
