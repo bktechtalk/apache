@@ -21,13 +21,13 @@
         name: httpd
         state: latest
 
-    - name: httpd.conf configuration file
-      get_url:
-        url: http://myblogmchopker.blogspot.com/2017/08/ansible-tomcat-installation-deployment.html
-        dest: /etc/httpd/conf/httpd.conf
-        force: yes
-        owner: apache
-        group: apache
+   # - name: httpd.conf configuration file
+   #   get_url:
+   #     url: http://myblogmchopker.blogspot.com/2017/08/ansible-tomcat-installation-deployment.html
+   #     dest: /etc/httpd/conf/httpd.conf
+   #     force: yes
+   #     owner: apache
+   #     group: apache
     - name: chnage index.html
       lineinfile:
         path: /var/www/html/index.html
