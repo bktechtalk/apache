@@ -38,7 +38,7 @@
         name: httpd
         state: started
         enabled: true
-    - nmae: NTP configuration
+    - name: NTP configuration
       yum:
         name: ntp
         state: present
