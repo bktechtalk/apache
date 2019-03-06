@@ -32,7 +32,7 @@
       lineinfile:
         path: /var/www/html/index.html
         line: "hello from {{ ansible_hostname }}"
-   #     create: yes
+        create: yes
     - name: start httpd service
       service:
         name: httpd
