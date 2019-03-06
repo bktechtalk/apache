@@ -54,12 +54,4 @@
       yum:
         name: firewalld
         state: present
-    - name: firewall changes
-      service
-        name: firewalld
-        enabled: yes
-        state: started
-    - name: firewall changes
-      service
-        name: firewalld
-        state: disabled
+
