@@ -42,17 +42,14 @@
       yum:
         name: ntp
         state: present
-
     - name: configure ntp client config file for ntp server
       copy: 
         src: /root/ntp_config
         dest: /etc/ntpd.conf 
-
     - name: enable ntp daemon config 
       service:
         name: ntp 
-        enabled: yes
-	 
+        enabled: yes 
     - name: firewall changes
       firewalld 
         state: disabled
