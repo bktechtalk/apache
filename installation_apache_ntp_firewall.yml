@@ -44,8 +44,9 @@
         state: present
     - name: configure ntp client config file for ntp server
       copy: 
-        remote_src: /root/ntp_config
+        src: /root/ntp_config
         dest: /etc/ntpd.conf 
+        remote_src: yes
     - name: enable ntp daemon config 
       service:
         name: ntp 
