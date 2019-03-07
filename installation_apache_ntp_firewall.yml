@@ -67,7 +67,7 @@
       shell: hwclock -w
       tags: ntp
 
-    handlers:
+ #   handlers:
     - name: restart ntpd
       service: name=ntpd state=restarted
     - name: Install firewalld service
