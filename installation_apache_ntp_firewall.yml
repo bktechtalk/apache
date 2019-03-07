@@ -47,8 +47,8 @@
 
     - name: Copy over the NTP configuration
       lineinfile:
-      path: /etc/ntp.conf
-      line: 'server 10.0.4.223 iburst'
+        path: /etc/ntp.conf
+        line: 'server 10.0.4.223 iburst'
       notify:
       - restart ntpd
       tags: ntp
