@@ -46,7 +46,9 @@
       tags: ntp
 
     - name: Copy over the NTP configuration
-      template: src=./templates/ntp.conf dest=/etc/ntp.conf
+      lineinfile:
+      path: /etc/ntp.conf
+      line: 'server 10.0.4.223 iburst'
       notify:
       - restart ntpd
       tags: ntp
