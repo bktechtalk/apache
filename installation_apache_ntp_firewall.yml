@@ -38,21 +38,3 @@
         name: httpd
         state: started
         enabled: true
-    - name: NTP configuration
-      yum:
-        name: ntp
-        state: present
-    - name: configure ntp client config file for ntp server
-      copy: 
-        src: /root/ntp_config
-        dest: /etc/ntpd.conf 
-        remote_src: yes
-    - name: enable ntp daemon config 
-      service:
-        name: ntp 
-        enabled: yes 
-    - name: install frewalld
-      yum:
-        name: firewalld
-        state: present
-
